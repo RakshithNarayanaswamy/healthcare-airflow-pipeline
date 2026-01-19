@@ -19,16 +19,19 @@ The objective is to demonstrate how **raw streaming telemetry** can be converted
 ## Business Questions Addressed
 
 ### Patient Risk & Severity
+
 - How do vital signals correlate with patient severity levels?
 - Which vitals are most associated with critical alerts?
 - How can patient risk be summarized at a snapshot level?
 
 ### Alert Behavior
+
 - Which patients generate the highest alert volume?
 - What alert types occur most frequently?
 - Are alerts clustered around certain vital thresholds?
 
 ### Data Quality & Reliability
+
 - Are vitals consistently populated in the Gold layer?
 - Which attributes show higher null or inconsistency rates?
 - How reliable is the analytics layer for downstream use?
@@ -40,43 +43,50 @@ The objective is to demonstrate how **raw streaming telemetry** can be converted
 The pipeline is designed using a **modern lakehouse pattern**:
 
 ### Bronze Layer — Raw Streaming Data
+
 - Ingests simulated healthcare vitals as-is
 - Preserves raw event fidelity
 - No transformations applied
 
 ### Silver Layer — Cleansed & Enriched
+
 - Data type normalization and validation
 - Severity classification logic
 - Statistical enrichment using **Pandas** and **NumPy**
 - Alert standardization
 
 ### Gold Layer — Analytics Ready
+
 - Patient-level risk snapshots
 - Aggregated alert metrics
 - Optimized datasets for analytics and reporting
 - Quality-validated, low-latency tables
+  ![image](https://github.com/RakshithNarayanaswamy/healthcare-airflow-pipeline/blob/main/Screenshots/Screenshot%202026-01-19%20at%203.30.12%E2%80%AFPM.png)
 
 ---
 
 ## Orchestration & Event-Driven Design
 
 ### Apache Airflow
+
 - Orchestrates Databricks notebook execution
 - Manages task dependencies across Bronze → Silver → Gold
 - Supports scheduled and manual pipeline runs
 
 ### Apache Kafka
+
 - Publishes pipeline completion events
 - Emits alert-related notifications
 - Enables downstream extensibility for monitoring systems
 
----
+## ![image](https://github.com/RakshithNarayanaswamy/healthcare-airflow-pipeline/blob/main/Screenshots/Screenshot%202026-01-19%20at%203.27.52%E2%80%AFPM.png)
 
 ## Analytics & Visualizations
 
 Analytics are performed directly within **Databricks notebooks** using **Pandas, NumPy, and Matplotlib**, demonstrating analytics readiness without external BI tools.
 
 Key analyses include:
+
 - Distribution of vital signals (heart rate, SpO₂)
 - Heart rate vs patient severity correlation
 - Top patients by alert frequency
@@ -91,31 +101,41 @@ The Gold layer exposes analytics-friendly structures:
 
 - **Patient Risk Snapshot**
   - Aggregated vitals
+    ![image](https://github.com/RakshithNarayanaswamy/healthcare-airflow-pipeline/blob/main/Screenshots/Screenshot%202026-01-19%20at%203.53.30%E2%80%AFPM.png)
+    ![image](https://github.com/RakshithNarayanaswamy/healthcare-airflow-pipeline/blob/main/Screenshots/Screenshot%202026-01-19%20at%203.53.10%E2%80%AFPM.png)
   - Severity classification
+    ![image](https://github.com/RakshithNarayanaswamy/healthcare-airflow-pipeline/blob/main/Screenshots/Screenshot%202026-01-19%20at%203.52.44%E2%80%AFPM.png)
+    ![image](https://github.com/RakshithNarayanaswamy/healthcare-airflow-pipeline/blob/main/Screenshots/Screenshot%202026-01-19%20at%203.52.33%E2%80%AFPM.png)
   - Statistical summaries
+    ![image](https://github.com/RakshithNarayanaswamy/healthcare-airflow-pipeline/blob/main/Screenshots/Screenshot%202026-01-19%20at%203.51.13%E2%80%AFPM.png)
 
 - **Alert Analytics**
   - Alert frequency by patient
+    ![image](https://github.com/RakshithNarayanaswamy/healthcare-airflow-pipeline/blob/main/Screenshots/Screenshot%202026-01-19%20at%203.52.05%E2%80%AFPM.png)
   - Severity distribution
+    ![image](https://github.com/RakshithNarayanaswamy/healthcare-airflow-pipeline/blob/main/Screenshots/Screenshot%202026-01-19%20at%203.51.56%E2%80%AFPM.png)
   - Threshold breach patterns
+    ![image](https://github.com/RakshithNarayanaswamy/healthcare-airflow-pipeline/blob/main/Screenshots/Screenshot%202026-01-19%20at%203.51.38%E2%80%AFPM.png)
 
 - **Data Quality Metrics**
-  - Column-level null percentage checks
+  - Column-level null percentage check
+    ![image](https://github.com/RakshithNarayanaswamy/healthcare-airflow-pipeline/blob/main/Screenshots/Screenshot%202026-01-19%20at%203.52.23%E2%80%AFPM.png)
   - Completeness validation
+    ![image](https://github.com/RakshithNarayanaswamy/healthcare-airflow-pipeline/blob/main/Screenshots/Screenshot%202026-01-19%20at%203.52.55%E2%80%AFPM.png)
 
 ---
 
 ## Technology Stack
 
-| Category | Tools |
-|--------|-------|
-| Streaming & Processing | Databricks (PySpark, SQL) |
-| Orchestration | Apache Airflow |
-| Event Streaming | Apache Kafka |
-| Analytics | Pandas, NumPy, Matplotlib |
-| Architecture | Medallion (Bronze–Silver–Gold) |
-| Containerization | Docker |
-| Version Control | Git & GitHub |
+| Category               | Tools                          |
+| ---------------------- | ------------------------------ |
+| Streaming & Processing | Databricks (PySpark, SQL)      |
+| Orchestration          | Apache Airflow                 |
+| Event Streaming        | Apache Kafka                   |
+| Analytics              | Pandas, NumPy, Matplotlib      |
+| Architecture           | Medallion (Bronze–Silver–Gold) |
+| Containerization       | Docker                         |
+| Version Control        | Git & GitHub                   |
 
 ---
 
@@ -132,6 +152,7 @@ The Gold layer exposes analytics-friendly structures:
 ## Business Value
 
 This project demonstrates how healthcare streaming data can be transformed into:
+
 - Patient-centric risk insights
 - Reliable analytics layers for reporting
 - Event-driven monitoring and extensibility
@@ -147,4 +168,3 @@ This project demonstrates how healthcare streaming data can be transformed into:
 - Kafka-based event publishing
 - Analytics using Python data libraries
 - Production-style data quality checks
-
