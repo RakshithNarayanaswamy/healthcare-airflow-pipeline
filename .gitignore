@@ -1,0 +1,18 @@
+# Airflow logs
+logs/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Screenshots / images
+Screenshots/
+
+# Docker
+.env
