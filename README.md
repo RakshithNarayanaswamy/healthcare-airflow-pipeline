@@ -38,6 +38,27 @@ The objective is to demonstrate how **raw streaming telemetry** can be converted
 
 ---
 
+## Data Sources
+
+### Synthetic Healthcare Data (Synthea)
+
+Source: Synthea™ Synthetic Patient Generator
+Provider: MITRE Corporation
+Website: https://synthea.mitre.org
+Data Type: Synthetic (HIPAA-safe, non-identifiable healthcare data)
+
+Description:
+Synthea is an open-source synthetic data generator that simulates realistic patient health records. It produces longitudinal healthcare data, including patient demographics, encounters, conditions, observations (vitals), medications, and procedures. The dataset is widely used for healthcare analytics, interoperability testing, and data engineering pipelines without exposing real patient information.
+
+Key Characteristics:
+
+- Fully synthetic and privacy-safe (no real patient data)
+- Longitudinal patient timelines
+- Realistic clinical workflows and vitals generation
+- Industry-aligned healthcare schema (FHIR-inspired)
+
+---
+
 ## Architecture Overview
 
 The pipeline is designed using a **modern lakehouse pattern**:
