@@ -11,8 +11,5 @@ __pycache__/
 # Jupyter
 .ipynb_checkpoints/
 
-# Screenshots / images
-Screenshots/
-
 # Docker
 .env
